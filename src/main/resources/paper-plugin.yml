@@ -1,0 +1,13 @@
+name: TSS-Lobby
+version: '0.1'
+main: net.slqmy.tss_lobby.TSSLobbyPlugin
+api-version: '1.20'
+prefix: TSS-Lobby
+dependencies:
+  server:
+    TSS-Core:
+      required: true
+      load: BEFORE
+
+author: slqmy
+description: The plugin that manages The Slimy Swamp's lobby world!
