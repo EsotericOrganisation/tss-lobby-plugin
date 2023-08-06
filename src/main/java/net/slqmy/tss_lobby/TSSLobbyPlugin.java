@@ -15,8 +15,6 @@ public final class TSSLobbyPlugin extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
-		getDataFolder().mkdir();
-
 		Bukkit.getPluginManager().registerEvents(new JoinListener(this), this);
 	}
 }
