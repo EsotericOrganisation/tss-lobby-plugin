@@ -20,6 +20,7 @@ repositories {
 
 dependencies {
     compileOnly(files("../TSS-Core/build/libs/tss_core-0.1-dev-all.jar"))
+    compileOnly("net.luckperms", "api", "5.4")
 
     paperweight.paperDevBundle("1.20.1-R0.1-SNAPSHOT")
 }
