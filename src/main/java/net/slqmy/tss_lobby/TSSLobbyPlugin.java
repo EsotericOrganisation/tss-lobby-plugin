@@ -2,7 +2,9 @@ package net.slqmy.tss_lobby;
 
 import net.slqmy.tss_core.TSSCorePlugin;
 import net.slqmy.tss_lobby.event.JoinListener;
+import net.slqmy.tss_lobby.event.NPCClickListener;
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class TSSLobbyPlugin extends JavaPlugin {
@@ -15,6 +17,9 @@ public final class TSSLobbyPlugin extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
-		Bukkit.getPluginManager().registerEvents(new JoinListener(this), this);
+		PluginManager pluginManager = Bukkit.getPluginManager();
+
+		pluginManager.registerEvents(new JoinListener(this), this);
+		pluginManager.registerEvents(new NPCClickListener(this), this);
 	}
 }
