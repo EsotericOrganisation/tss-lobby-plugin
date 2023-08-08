@@ -2,9 +2,10 @@ package net.slqmy.tss_lobby.event;
 
 import net.kyori.adventure.title.TitlePart;
 import net.slqmy.tss_core.data.Message;
+import net.slqmy.tss_core.data.type.FireworkType;
+import net.slqmy.tss_core.data.type.Rank;
 import net.slqmy.tss_core.manager.MessageManager;
 import net.slqmy.tss_lobby.TSSLobbyPlugin;
-import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
 import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
@@ -20,42 +21,41 @@ public class JoinListener implements Listener {
 
 	private static final Random random = new Random();
 
-	private final MessageManager messageManager;
+	private final TSSLobbyPlugin plugin;
 
 	public JoinListener(@NotNull TSSLobbyPlugin plugin) {
-		this.messageManager = plugin.getCore().getMessageManager();
+		this.plugin = plugin;
 	}
 
 	@EventHandler
 	public void onJoin(@NotNull PlayerJoinEvent event) {
 		Player player = event.getPlayer();
 
+		MessageManager messageManager = plugin.getCore().getMessageManager();
+
 		player.sendMessage(messageManager.getPlayerMessage(Message.WELCOME_CHAT_MESSAGE, player));
 		player.sendTitlePart(TitlePart.TITLE, messageManager.getPlayerMessage(Message.THE_SLIMY_SWAMP, player));
 		player.sendTitlePart(TitlePart.SUBTITLE, messageManager.getPlayerMessage(Message.WELCOME_SUBTITLE, player));
 
+		Rank rank = plugin.getRanksPlugin().getRankManager().getPlayerRank(player);
+
 		for (int i = 0; i < 5; i++) {
 			final Firework firework = player.getWorld().spawn(
-							player.getLocation().add(
+							player.getLocation().clone().add(
 											random.nextDouble(-1D, 1D),
-											random.nextDouble(-1D, 1D),
+											1,
 											random.nextDouble(-1D, 1D)),
-							Firework.class);
-
-			final FireworkMeta fireworkMeta = firework.getFireworkMeta();
-
-			fireworkMeta.addEffect(
-							FireworkEffect.builder()
-											.withColor(Color.RED)
-											.withColor(Color.BLACK)
-											.with(FireworkEffect.Type.values()[i])
-											.withTrail()
-											.withFlicker()
-											.withFade(Color.BLACK)
-											.build()
+							Firework.class
 			);
 
-			fireworkMeta.setPower(3);
+			final FireworkMeta fireworkMeta = firework.getFireworkMeta();
+			FireworkType fireworkType = rank.getFireworkType();
+
+			for (FireworkEffect effect : fireworkType.getEffects()) {
+				fireworkMeta.addEffects(effect);
+			}
+
+			fireworkMeta.setPower(fireworkType.getPower());
 
 			firework.setFireworkMeta(fireworkMeta);
 		}
