@@ -4,6 +4,7 @@ import net.kyori.adventure.title.TitlePart;
 import net.slqmy.tss_core.data.Message;
 import net.slqmy.tss_core.data.type.FireworkType;
 import net.slqmy.tss_core.data.type.Rank;
+import net.slqmy.tss_core.data.type.player.PlayerProfile;
 import net.slqmy.tss_core.manager.MessageManager;
 import net.slqmy.tss_lobby.TSSLobbyPlugin;
 import org.bukkit.FireworkEffect;
@@ -19,11 +20,7 @@ import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Random;
-
 public class JoinListener implements Listener {
-
-	private static final Random random = new Random();
 
 	private final TSSLobbyPlugin plugin;
 
@@ -41,14 +38,26 @@ public class JoinListener implements Listener {
 		player.sendTitlePart(TitlePart.TITLE, messageManager.getPlayerMessage(Message.THE_SLIMY_SWAMP, player));
 		player.sendTitlePart(TitlePart.SUBTITLE, messageManager.getPlayerMessage(Message.WELCOME_SUBTITLE, player));
 
-		Rank rank = plugin.getRanksPlugin().getRankManager().getPlayerRank(player);
+		PlayerProfile profile = plugin.getCore().getPlayerManager().getProfile(player);
+
+		if (!profile.getPlayerPreferences().isLobbyFireworkEnabled()) {
+			return;
+		}
+
+		Rank rank = plugin.getRanksPlugin().getRankManager().getPlayerRank(profile);
+
+		if (rank.getWeight() == 0 && profile.getPlayerStats().getJoinCount() > 5) {
+			return;
+		}
+
 		World playerWorld = player.getWorld();
 
 		Firework firework = playerWorld.spawn(
 						player.getLocation().clone().add(
-										random.nextDouble(-1D, 1D),
+										0,
 										2,
-										random.nextDouble(-1D, 1D)),
+										0
+						),
 						Firework.class
 		);
 
@@ -75,13 +84,13 @@ public class JoinListener implements Listener {
 
 			@Override
 			public void run() {
-				if (firework.isDetonated()) {
+				if (firework.isDetonated() || firework.isDead()) {
 					cancel();
 					return;
 				}
 
 				double angleRadians = Math.toRadians(angleDegrees);
-				playerWorld.spawnParticle(spiralParticle, firework.getLocation().add(-Math.cos(angleRadians) * radius, 0, Math.sin(angleRadians) * radius), 1, 0, 0, 0, 0);
+				playerWorld.spawnParticle(spiralParticle, firework.getLocation().add(Math.cos(angleRadians) * radius, 0, Math.sin(angleRadians) * radius), 1, 0, 0, 0, 0);
 
 				angleDegrees += 45D;
 			}
