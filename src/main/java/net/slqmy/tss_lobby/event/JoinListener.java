@@ -43,43 +43,47 @@ public class JoinListener implements Listener {
 		Rank rank = plugin.getRanksPlugin().getRankManager().getPlayerRank(player);
 		World playerWorld = player.getWorld();
 
-		for (int i = 0; i < 5; i++) {
-			Firework firework = playerWorld.spawn(
-							player.getLocation().clone().add(
-											random.nextDouble(-1D, 1D),
-											2,
-											random.nextDouble(-1D, 1D)),
-							Firework.class
-			);
+		Firework firework = playerWorld.spawn(
+						player.getLocation().clone().add(
+										random.nextDouble(-1D, 1D),
+										2,
+										random.nextDouble(-1D, 1D)),
+						Firework.class
+		);
 
-			FireworkMeta fireworkMeta = firework.getFireworkMeta();
-			FireworkType fireworkType = rank.getFireworkType();
+		FireworkMeta fireworkMeta = firework.getFireworkMeta();
+		FireworkType fireworkType = rank.getFireworkType();
 
-			for (FireworkEffect effect : fireworkType.getEffects()) {
-				fireworkMeta.addEffects(effect);
-			}
-
-			fireworkMeta.setPower(fireworkType.getPower());
-			firework.setFireworkMeta(fireworkMeta);
-
-			Particle spiralParticle = fireworkType.getSpiralParticle();
-
-			if (spiralParticle == null) {
-				continue;
-			}
-
-			new BukkitRunnable() {
-
-				double angleDegrees = 0;
-
-				@Override
-				public void run() {
-					double angleRadians = Math.toRadians(angleDegrees);
-					playerWorld.spawnParticle(spiralParticle, firework.getLocation().add(-Math.cos(angleRadians), 0, Math.sin(angleRadians)), 1);
-
-					angleDegrees += 5;
-				}
-			}.runTaskTimer(plugin, 0L, 1L);
+		for (FireworkEffect effect : fireworkType.getEffects()) {
+			fireworkMeta.addEffects(effect);
 		}
+
+		fireworkMeta.setPower(fireworkType.getPower());
+		firework.setFireworkMeta(fireworkMeta);
+
+		Particle spiralParticle = fireworkType.getSpiralParticle();
+
+		if (spiralParticle == null) {
+			return;
+		}
+
+		new BukkitRunnable() {
+
+			final double radius = 0.65D;
+			double angleDegrees = 0;
+
+			@Override
+			public void run() {
+				if (firework.isDetonated()) {
+					cancel();
+					return;
+				}
+
+				double angleRadians = Math.toRadians(angleDegrees);
+				playerWorld.spawnParticle(spiralParticle, firework.getLocation().add(-Math.cos(angleRadians) * radius, 0, Math.sin(angleRadians) * radius), 1, 0, 0, 0, 0);
+
+				angleDegrees += 45D;
+			}
+		}.runTaskTimer(plugin, 0L, 1L);
 	}
 }
