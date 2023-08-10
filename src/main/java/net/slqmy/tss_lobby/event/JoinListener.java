@@ -3,11 +3,13 @@ package net.slqmy.tss_lobby.event;
 import net.kyori.adventure.title.TitlePart;
 import net.slqmy.tss_core.datatype.FireworkType;
 import net.slqmy.tss_core.datatype.Rank;
+import net.slqmy.tss_core.datatype.SimpleLocation;
 import net.slqmy.tss_core.datatype.player.Message;
 import net.slqmy.tss_core.datatype.player.PlayerProfile;
 import net.slqmy.tss_core.manager.MessageManager;
 import net.slqmy.tss_lobby.TSSLobbyPlugin;
 import org.bukkit.FireworkEffect;
+import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.World;
 import org.bukkit.entity.Firework;
@@ -23,14 +25,24 @@ import org.jetbrains.annotations.NotNull;
 public class JoinListener implements Listener {
 
 	private final TSSLobbyPlugin plugin;
+	private final Location lobbyLocation;
 
 	public JoinListener(@NotNull TSSLobbyPlugin plugin) {
 		this.plugin = plugin;
+
+		SimpleLocation storedLocation = plugin.getFileManager().readJsonFile("lobby-location", SimpleLocation.class);
+		assert storedLocation != null;
+
+		this.lobbyLocation = storedLocation.asBukkitLocation();
 	}
 
 	@EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
 	public void onJoin(@NotNull PlayerJoinEvent event) {
 		Player player = event.getPlayer();
+
+		player.teleport(
+						lobbyLocation
+		);
 
 		MessageManager messageManager = plugin.getCore().getMessageManager();
 
