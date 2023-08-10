@@ -1,10 +1,10 @@
 package net.slqmy.tss_lobby.event;
 
 import net.kyori.adventure.title.TitlePart;
-import net.slqmy.tss_core.data.Message;
-import net.slqmy.tss_core.data.type.FireworkType;
-import net.slqmy.tss_core.data.type.Rank;
-import net.slqmy.tss_core.data.type.player.PlayerProfile;
+import net.slqmy.tss_core.datatype.FireworkType;
+import net.slqmy.tss_core.datatype.Rank;
+import net.slqmy.tss_core.datatype.player.Message;
+import net.slqmy.tss_core.datatype.player.PlayerProfile;
 import net.slqmy.tss_core.manager.MessageManager;
 import net.slqmy.tss_lobby.TSSLobbyPlugin;
 import org.bukkit.FireworkEffect;

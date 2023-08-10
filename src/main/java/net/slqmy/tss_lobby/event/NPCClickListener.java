@@ -1,7 +1,7 @@
 package net.slqmy.tss_lobby.event;
 
+import net.slqmy.tss_core.datatype.npc.NPC;
 import net.slqmy.tss_core.event.custom_event.NPCClickEvent;
-import net.slqmy.tss_core.type.NPCPlayer;
 import net.slqmy.tss_lobby.TSSLobbyPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
@@ -21,9 +21,9 @@ public class NPCClickListener implements Listener {
 	@EventHandler
 	public void onNPCClick(@NotNull NPCClickEvent event) {
 		Player player = event.getPlayer();
-		NPCPlayer data = event.getNpcPlayer();
+		NPC npc = event.getNpc();
 
-		String worldName = data.getNpc().getDestinationWorldName();
+		String worldName = npc.getDestinationWorldName();
 
 		World world = Bukkit.getWorld(worldName);
 
