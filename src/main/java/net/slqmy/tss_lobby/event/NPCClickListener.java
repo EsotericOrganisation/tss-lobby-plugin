@@ -12,25 +12,25 @@ import org.jetbrains.annotations.NotNull;
 
 public class NPCClickListener implements Listener {
 
-	private final TSSLobbyPlugin plugin;
+  private final TSSLobbyPlugin plugin;
 
-	public NPCClickListener(TSSLobbyPlugin plugin) {
-		this.plugin = plugin;
+  public NPCClickListener(TSSLobbyPlugin plugin) {
+	this.plugin = plugin;
+  }
+
+  @EventHandler
+  public void onNPCClick(@NotNull NPCClickEvent event) {
+	Player player = event.getPlayer();
+	NPC npc = event.getNpc();
+
+	String worldName = npc.getDestinationWorldName();
+
+	World world = Bukkit.getWorld(worldName);
+
+	if (world != null) {
+	  Bukkit.getScheduler().runTask(plugin, () ->
+			  player.teleport(world.getSpawnLocation())
+	  );
 	}
-
-	@EventHandler
-	public void onNPCClick(@NotNull NPCClickEvent event) {
-		Player player = event.getPlayer();
-		NPC npc = event.getNpc();
-
-		String worldName = npc.getDestinationWorldName();
-
-		World world = Bukkit.getWorld(worldName);
-
-		if (world != null) {
-			Bukkit.getScheduler().runTask(plugin, () ->
-							player.teleport(world.getSpawnLocation())
-			);
-		}
-	}
+  }
 }

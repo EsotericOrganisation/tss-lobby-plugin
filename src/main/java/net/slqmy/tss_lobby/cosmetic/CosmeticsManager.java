@@ -17,9 +17,9 @@ public class CosmeticsManager {
 	for (AbstractCosmetic equippedCosmetic : equippedCosmetics) {
 	  Cosmetic cosmetic = equippedCosmetic.getCosmetic();
 
-	   if (targetCosmeticClass.isInstance(equippedCosmetic)) {
-		 equippedTargetCosmetics.add((T) equippedCosmetic);
-	   } else if (targetCosmeticClass.isInstance(cosmetic)) {
+	  if (targetCosmeticClass.isInstance(equippedCosmetic)) {
+		equippedTargetCosmetics.add((T) equippedCosmetic);
+	  } else if (targetCosmeticClass.isInstance(cosmetic)) {
 		equippedTargetCosmetics.add((T) cosmetic);
 	  }
 	}
