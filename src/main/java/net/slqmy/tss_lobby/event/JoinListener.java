@@ -5,9 +5,11 @@ import net.slqmy.tss_core.datatype.FireworkType;
 import net.slqmy.tss_core.datatype.Rank;
 import net.slqmy.tss_core.datatype.player.Message;
 import net.slqmy.tss_core.datatype.player.PlayerProfile;
+import net.slqmy.tss_core.datatype.player.TranslatableItemStack;
 import net.slqmy.tss_core.manager.MessageManager;
 import net.slqmy.tss_lobby.TSSLobbyPlugin;
 import org.bukkit.FireworkEffect;
+import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.World;
 import org.bukkit.entity.Firework;
@@ -16,6 +18,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
@@ -31,8 +34,14 @@ public class JoinListener implements Listener {
   @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
   public void onJoin(@NotNull PlayerJoinEvent event) {
 	Player player = event.getPlayer();
+	boolean success = player.teleport(plugin.getLobbyLocation());
+	if (!success) {
+	  return;
+	}
 
-	player.teleport(plugin.getLobbyLocation());
+	PlayerInventory playerInventory = player.getInventory();
+	playerInventory.clear();
+	playerInventory.setItem(4, new TranslatableItemStack(Material.CHEST, Message.COSMETICS_ITEM_DISPLAY_NAME, Message.COSMETICS_ITEM_DESCRIPTION).asBukkitItemStack(player, plugin.getCore()));
 
 	MessageManager messageManager = plugin.getCore().getMessageManager();
 

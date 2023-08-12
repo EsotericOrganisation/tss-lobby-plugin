@@ -19,7 +19,7 @@ public class CosmeticsMenu {
 	for (int i = 0; i < cosmeticTypes.length; i++) {
 	  CosmeticType cosmeticType = cosmeticTypes[i];
 
-	  ItemStack displayItem = cosmeticType.getDisplayItem();
+	  ItemStack displayItem = cosmeticType.getDisplayItem(player, plugin);
 	  ItemMeta displayItemMeta = displayItem.getItemMeta();
 
 	  displayItemMeta.getPersistentDataContainer().set(new NamespacedKey(plugin, "cosmetic_type"), PersistentDataType.STRING, cosmeticType.name());
