@@ -12,6 +12,7 @@ import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 
 public class CosmeticsMenu {
+
   public CosmeticsMenu(Player player, @NotNull TSSLobbyPlugin plugin) {
 	Inventory inventory = Bukkit.createInventory(null, 27, plugin.getCore().getMessageManager().getPlayerMessage(Message.COSMETICS, player));
 

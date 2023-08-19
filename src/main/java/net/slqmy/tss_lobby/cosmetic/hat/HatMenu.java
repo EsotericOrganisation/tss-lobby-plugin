@@ -17,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 public class HatMenu {
+
   public HatMenu(Player player, @NotNull TSSLobbyPlugin plugin) {
 	MessageManager messageManager = plugin.getCore().getMessageManager();
 	Inventory inventory = Bukkit.createInventory(null, 27, messageManager.getPlayerMessage(Message.HATS, player));
