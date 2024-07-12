@@ -19,19 +19,19 @@ public enum TrailType implements ParticleCosmetic {
 		  new TranslatableItemStack(Material.FIRE_CHARGE, Message.FIRE_TRAIL_DISPLAY_NAME, Message.FIRE_TRAIL_DESCRIPTION)
   ),
   WATER(
-		  Particle.WATER_SPLASH,
+		  Particle.FALLING_WATER,
 		  new TranslatableItemStack(Material.WATER_BUCKET, Message.WATER_TRAIL_DISPLAY_NAME, Message.WATER_TRAIL_DESCRIPTION)
   ),
   BUBBLE(
-		  Particle.WATER_BUBBLE,
+		  Particle.BUBBLE,
 		  new TranslatableItemStack(Material.LIGHT_BLUE_STAINED_GLASS, Message.BUBBLE_TRAIL_DISPLAY_NAME, Message.BUBBLE_TRAIL_DESCRIPTION)
   ),
   EXPLOSIVE(
-		  Particle.EXPLOSION_NORMAL,
+		  Particle.EXPLOSION,
 		  new TranslatableItemStack(Material.TNT, Message.EXPLOSIVE_TRAIL_DISPLAY_NAME, Message.EXPLOSIVE_TRAIL_DESCRIPTION)
   ),
   SLIME(
-		  Particle.SLIME,
+		  Particle.ITEM_SLIME,
 		  new TranslatableItemStack(Material.SLIME_BALL, Message.SLIME_TRAIL_DISPLAY_NAME, Message.SLIME_TRAIL_DESCRIPTION)
   );
 
