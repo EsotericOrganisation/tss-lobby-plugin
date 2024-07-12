@@ -1,9 +1,11 @@
-plugins {
-    java
-    application
+import xyz.jpenilla.resourcefactory.bukkit.BukkitPluginYaml
 
-    id("io.papermc.paperweight.userdev") version "1.5.5"
-    id("xyz.jpenilla.run-paper") version "2.1.0"
+plugins {
+    `java-library`
+
+    id("io.papermc.paperweight.userdev") version "1.7.1"
+    id("xyz.jpenilla.run-paper") version "2.3.0"
+    id("xyz.jpenilla.resource-factory-bukkit-convention") version "1.1.1"
 }
 
 group = "net.slqmy"
@@ -14,22 +16,14 @@ java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 }
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     compileOnly(files("../TSS-Core/build/libs/tss_core-0.1-dev-all.jar"))
     compileOnly(files("../TSS-Ranks/build/libs/tss_ranks-0.1-dev.jar"))
 
-    paperweight.paperDevBundle("1.20.1-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle("1.21-R0.1-SNAPSHOT")
 }
 
 tasks {
-    assemble {
-        dependsOn(reobfJar)
-    }
-
     compileJava {
         options.encoding = Charsets.UTF_8.name()
         options.release.set(17)
@@ -38,29 +32,11 @@ tasks {
     javadoc {
         options.encoding = Charsets.UTF_8.name()
     }
-
-    processResources {
-        filteringCharset = Charsets.UTF_8.name()
-
-        val props = mapOf(
-                "name" to project.name,
-                "version" to project.version,
-                "description" to project.description,
-                "apiVersion" to "1.20"
-        )
-
-        inputs.properties(props)
-
-        filesMatching("plugin.yml") {
-            expand(props)
-        }
-    }
-
-    runServer {
-        minecraftVersion("1.20.1")
-    }
 }
 
-application {
-    mainClass.set("TSSLobbyPlugin")
+bukkitPluginYaml {
+  main = "net.slqmy.tss_lobby.TSSLobbyPlugin"
+  load = BukkitPluginYaml.PluginLoadOrder.STARTUP
+  authors.add("Slqmy")
+  apiVersion = "1.21"
 }
