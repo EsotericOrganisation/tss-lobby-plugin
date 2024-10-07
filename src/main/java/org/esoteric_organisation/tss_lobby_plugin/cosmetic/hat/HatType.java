@@ -7,6 +7,7 @@ import org.esoteric_organisation.tss_lobby_plugin.cosmetic.Cosmetic;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 public enum HatType implements Cosmetic {
   TOP_HAT(new TranslatableItemStack(Material.PLAYER_HEAD, Message.TOP_HAT_DISPLAY_NAME, Message.TOP_HAT_DESCRIPTION)),
@@ -20,7 +21,7 @@ public enum HatType implements Cosmetic {
   }
 
   @Override
-  public ItemStack getDisplayItem(Player player, TSSLobbyPlugin plugin) {
+  public ItemStack getDisplayItem(Player player, @NotNull TSSLobbyPlugin plugin) {
 	return item.asBukkitItemStack(player, plugin.getCore());
   }
 

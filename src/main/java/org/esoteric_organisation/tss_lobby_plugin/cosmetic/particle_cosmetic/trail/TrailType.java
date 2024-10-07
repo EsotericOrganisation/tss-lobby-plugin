@@ -8,6 +8,7 @@ import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 public enum TrailType implements ParticleCosmetic {
   HEART(
@@ -60,7 +61,7 @@ public enum TrailType implements ParticleCosmetic {
   }
 
   @Override
-  public ItemStack getDisplayItem(Player player, TSSLobbyPlugin plugin) {
+  public ItemStack getDisplayItem(Player player, @NotNull TSSLobbyPlugin plugin) {
 	return displayItem.asBukkitItemStack(player, plugin.getCore());
   }
 
