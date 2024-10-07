@@ -17,8 +17,8 @@ public final class TSSLobbyPlugin extends JavaPlugin {
 
   private final PluginManager pluginManager = Bukkit.getPluginManager();
 
-  private final TSSCorePlugin core = (TSSCorePlugin) pluginManager.getPlugin("TSS-Core");
-  private final TSSRanksPlugin ranksPlugin = (TSSRanksPlugin) pluginManager.getPlugin("TSS-Ranks");
+  private final TSSCorePlugin core = (TSSCorePlugin) pluginManager.getPlugin("tss-core-plugin");
+  private final TSSRanksPlugin ranksPlugin = (TSSRanksPlugin) pluginManager.getPlugin("tss-ranks-plugin");
 
   private FileManager fileManager;
 
