@@ -1,8 +1,8 @@
-package net.slqmy.tss_lobby.event;
+package org.esoteric_organisation.tss_lobby_plugin.event;
 
 import net.slqmy.tss_core.datatype.npc.NPC;
 import net.slqmy.tss_core.event.custom_event.NPCClickEvent;
-import net.slqmy.tss_lobby.TSSLobbyPlugin;
+import org.esoteric_organisation.tss_lobby_plugin.TSSLobbyPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.entity.Player;

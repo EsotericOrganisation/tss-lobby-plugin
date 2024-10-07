@@ -1,4 +1,4 @@
-package net.slqmy.tss_lobby.cosmetic;
+package org.esoteric_organisation.tss_lobby_plugin.cosmetic;
 
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;

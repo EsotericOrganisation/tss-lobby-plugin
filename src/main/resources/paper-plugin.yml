@@ -1,6 +1,6 @@
-name: TSS-Lobby
+name: tss-lobby-plugin
 version: '0.1'
-main: net.slqmy.tss_lobby.TSSLobbyPlugin
+main: org.esoteric_organisation.tss_lobby_plugin.TSSLobbyPlugin
 api-version: '1.20'
 prefix: TSS-Lobby
 dependencies:
@@ -12,5 +12,7 @@ dependencies:
       required: true
       load: BEFORE
 
-author: slqmy
+author: Esoteric Organisation
+contributors:
+  - Esoteric Enderman
 description: The plugin that manages The Slimy Swamp's lobby world!

@@ -1,12 +1,12 @@
-package net.slqmy.tss_lobby;
+package org.esoteric_organisation.tss_lobby_plugin;
 
 import net.slqmy.tss_core.TSSCorePlugin;
 import net.slqmy.tss_core.datatype.SimpleLocation;
 import net.slqmy.tss_core.manager.FileManager;
-import net.slqmy.tss_lobby.cosmetic.CosmeticsManager;
-import net.slqmy.tss_lobby.event.JoinListener;
-import net.slqmy.tss_lobby.event.LobbyListener;
-import net.slqmy.tss_lobby.event.NPCClickListener;
+import org.esoteric_organisation.tss_lobby_plugin.cosmetic.CosmeticsManager;
+import org.esoteric_organisation.tss_lobby_plugin.event.JoinListener;
+import org.esoteric_organisation.tss_lobby_plugin.event.LobbyListener;
+import org.esoteric_organisation.tss_lobby_plugin.event.NPCClickListener;
 import net.slqmy.tss_ranks.TSSRanksPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

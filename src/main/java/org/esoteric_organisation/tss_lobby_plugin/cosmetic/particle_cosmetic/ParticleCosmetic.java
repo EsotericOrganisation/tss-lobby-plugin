@@ -1,6 +1,6 @@
-package net.slqmy.tss_lobby.cosmetic.particle_cosmetic;
+package org.esoteric_organisation.tss_lobby_plugin.cosmetic.particle_cosmetic;
 
-import net.slqmy.tss_lobby.cosmetic.Cosmetic;
+import org.esoteric_organisation.tss_lobby_plugin.cosmetic.Cosmetic;
 import org.bukkit.Particle;
 
 public interface ParticleCosmetic extends Cosmetic {

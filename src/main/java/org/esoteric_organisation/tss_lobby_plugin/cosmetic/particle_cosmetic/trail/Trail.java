@@ -1,7 +1,7 @@
-package net.slqmy.tss_lobby.cosmetic.particle_cosmetic.trail;
+package org.esoteric_organisation.tss_lobby_plugin.cosmetic.particle_cosmetic.trail;
 
-import net.slqmy.tss_lobby.TSSLobbyPlugin;
-import net.slqmy.tss_lobby.cosmetic.particle_cosmetic.AbstractParticleCosmetic;
+import org.esoteric_organisation.tss_lobby_plugin.TSSLobbyPlugin;
+import org.esoteric_organisation.tss_lobby_plugin.cosmetic.particle_cosmetic.AbstractParticleCosmetic;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;

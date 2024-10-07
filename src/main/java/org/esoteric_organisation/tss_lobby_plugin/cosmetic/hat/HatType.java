@@ -1,9 +1,9 @@
-package net.slqmy.tss_lobby.cosmetic.hat;
+package org.esoteric_organisation.tss_lobby_plugin.cosmetic.hat;
 
 import net.slqmy.tss_core.datatype.player.Message;
 import net.slqmy.tss_core.datatype.player.TranslatableItemStack;
-import net.slqmy.tss_lobby.TSSLobbyPlugin;
-import net.slqmy.tss_lobby.cosmetic.Cosmetic;
+import org.esoteric_organisation.tss_lobby_plugin.TSSLobbyPlugin;
+import org.esoteric_organisation.tss_lobby_plugin.cosmetic.Cosmetic;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

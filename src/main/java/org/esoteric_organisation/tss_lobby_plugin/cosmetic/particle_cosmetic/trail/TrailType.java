@@ -1,9 +1,9 @@
-package net.slqmy.tss_lobby.cosmetic.particle_cosmetic.trail;
+package org.esoteric_organisation.tss_lobby_plugin.cosmetic.particle_cosmetic.trail;
 
 import net.slqmy.tss_core.datatype.player.Message;
 import net.slqmy.tss_core.datatype.player.TranslatableItemStack;
-import net.slqmy.tss_lobby.TSSLobbyPlugin;
-import net.slqmy.tss_lobby.cosmetic.particle_cosmetic.ParticleCosmetic;
+import org.esoteric_organisation.tss_lobby_plugin.TSSLobbyPlugin;
+import org.esoteric_organisation.tss_lobby_plugin.cosmetic.particle_cosmetic.ParticleCosmetic;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;

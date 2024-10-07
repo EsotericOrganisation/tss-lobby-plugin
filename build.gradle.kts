@@ -8,7 +8,7 @@ plugins {
     id("xyz.jpenilla.resource-factory-bukkit-convention") version "1.1.1"
 }
 
-group = "net.slqmy"
+group = "org.esoteric_organisation"
 version = "0.1"
 description = "The plugin that manages The Slimy Swamp's lobby world!"
 
@@ -35,8 +35,8 @@ tasks {
 }
 
 bukkitPluginYaml {
-  main = "net.slqmy.tss_lobby.TSSLobbyPlugin"
+  main = "org.esoteric_organisation.tss_lobby_plugin.TSSLobbyPlugin"
   load = BukkitPluginYaml.PluginLoadOrder.STARTUP
-  authors.add("Slqmy")
+  authors.addAll("Esoteric Organisation", "Esoteric Enderman")
   apiVersion = "1.21"
 }
