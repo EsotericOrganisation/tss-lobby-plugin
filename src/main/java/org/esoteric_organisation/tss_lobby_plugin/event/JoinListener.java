@@ -1,12 +1,12 @@
 package org.esoteric_organisation.tss_lobby_plugin.event;
 
 import net.kyori.adventure.title.TitlePart;
-import net.slqmy.tss_core.datatype.FireworkType;
-import net.slqmy.tss_core.datatype.Rank;
-import net.slqmy.tss_core.datatype.player.Message;
-import net.slqmy.tss_core.datatype.player.PlayerProfile;
-import net.slqmy.tss_core.datatype.player.TranslatableItemStack;
-import net.slqmy.tss_core.manager.MessageManager;
+import org.esoteric_organisation.tss_core_plugin.datatype.FireworkType;
+import org.esoteric_organisation.tss_core_plugin.datatype.Rank;
+import org.esoteric_organisation.tss_core_plugin.datatype.player.Message;
+import org.esoteric_organisation.tss_core_plugin.datatype.player.PlayerProfile;
+import org.esoteric_organisation.tss_core_plugin.datatype.player.TranslatableItemStack;
+import org.esoteric_organisation.tss_core_plugin.manager.MessageManager;
 import org.esoteric_organisation.tss_lobby_plugin.TSSLobbyPlugin;
 import org.bukkit.FireworkEffect;
 import org.bukkit.Material;

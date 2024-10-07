@@ -1,6 +1,6 @@
 package org.esoteric_organisation.tss_lobby_plugin.event;
 
-import net.slqmy.tss_core.util.DebugUtil;
+import org.esoteric_organisation.tss_core_plugin.util.DebugUtil;
 import org.esoteric_organisation.tss_lobby_plugin.TSSLobbyPlugin;
 import org.esoteric_organisation.tss_lobby_plugin.cosmetic.AbstractCosmetic;
 import org.esoteric_organisation.tss_lobby_plugin.cosmetic.CosmeticType;

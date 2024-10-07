@@ -1,8 +1,8 @@
 package org.esoteric_organisation.tss_lobby_plugin.cosmetic.particle_cosmetic.trail;
 
-import net.slqmy.tss_core.datatype.Rank;
-import net.slqmy.tss_core.datatype.player.Message;
-import net.slqmy.tss_core.manager.MessageManager;
+import org.esoteric_organisation.tss_core_plugin.datatype.Rank;
+import org.esoteric_organisation.tss_core_plugin.datatype.player.Message;
+import org.esoteric_organisation.tss_core_plugin.manager.MessageManager;
 import org.esoteric_organisation.tss_lobby_plugin.TSSLobbyPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
