@@ -10,7 +10,7 @@ plugins {
 
 group = "org.esoteric_organisation"
 version = "0.1"
-description = "The plugin that manages The Slimy Swamp's lobby world!"
+description = "The Minecraft plugin that manages The Slimy Swamp's lobby world!"
 
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(21))
@@ -44,4 +44,5 @@ bukkitPluginYaml {
   load = BukkitPluginYaml.PluginLoadOrder.STARTUP
   authors.addAll("Esoteric Organisation", "Esoteric Enderman")
   apiVersion = "1.21"
+  description = project.description
 }
