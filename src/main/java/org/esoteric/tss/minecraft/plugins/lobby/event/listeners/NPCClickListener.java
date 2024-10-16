@@ -1,8 +1,8 @@
-package org.esoteric_organisation.tss_lobby_plugin.event;
+package org.esoteric.tss.minecraft.plugins.lobby.event.listeners;
 
 import org.esoteric_organisation.tss_core_plugin.datatype.npc.NPC;
 import org.esoteric_organisation.tss_core_plugin.event.custom_event.NPCClickEvent;
-import org.esoteric_organisation.tss_lobby_plugin.TSSLobbyPlugin;
+import org.esoteric.tss.minecraft.plugins.lobby.TSSLobbyPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.entity.Player;

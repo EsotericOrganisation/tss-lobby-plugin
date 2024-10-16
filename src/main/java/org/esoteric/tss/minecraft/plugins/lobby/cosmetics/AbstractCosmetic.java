@@ -1,9 +1,9 @@
-package org.esoteric_organisation.tss_lobby_plugin.cosmetic;
+package org.esoteric.tss.minecraft.plugins.lobby.cosmetics;
 
 import org.esoteric_organisation.tss_core_plugin.datatype.Rank;
 import org.esoteric_organisation.tss_core_plugin.datatype.player.Message;
 import org.esoteric_organisation.tss_core_plugin.manager.MessageManager;
-import org.esoteric_organisation.tss_lobby_plugin.TSSLobbyPlugin;
+import org.esoteric.tss.minecraft.plugins.lobby.TSSLobbyPlugin;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 

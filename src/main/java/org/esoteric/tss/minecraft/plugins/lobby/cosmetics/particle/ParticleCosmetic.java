@@ -1,6 +1,6 @@
-package org.esoteric_organisation.tss_lobby_plugin.cosmetic.particle_cosmetic;
+package org.esoteric.tss.minecraft.plugins.lobby.cosmetics.particle;
 
-import org.esoteric_organisation.tss_lobby_plugin.cosmetic.Cosmetic;
+import org.esoteric.tss.minecraft.plugins.lobby.cosmetics.Cosmetic;
 import org.bukkit.Particle;
 
 public interface ParticleCosmetic extends Cosmetic {

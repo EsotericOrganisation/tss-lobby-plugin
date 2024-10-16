@@ -1,9 +1,9 @@
-package org.esoteric_organisation.tss_lobby_plugin.cosmetic.hat;
+package org.esoteric.tss.minecraft.plugins.lobby.cosmetics.hat;
 
 import org.esoteric_organisation.tss_core_plugin.datatype.player.Message;
 import org.esoteric_organisation.tss_core_plugin.datatype.player.TranslatableItemStack;
-import org.esoteric_organisation.tss_lobby_plugin.TSSLobbyPlugin;
-import org.esoteric_organisation.tss_lobby_plugin.cosmetic.Cosmetic;
+import org.esoteric.tss.minecraft.plugins.lobby.TSSLobbyPlugin;
+import org.esoteric.tss.minecraft.plugins.lobby.cosmetics.Cosmetic;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

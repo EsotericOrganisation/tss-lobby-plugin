@@ -1,4 +1,4 @@
-package org.esoteric_organisation.tss_lobby_plugin.cosmetic;
+package org.esoteric.tss.minecraft.plugins.lobby.cosmetics;
 
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;

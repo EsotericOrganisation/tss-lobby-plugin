@@ -1,12 +1,12 @@
-package org.esoteric_organisation.tss_lobby_plugin;
+package org.esoteric.tss.minecraft.plugins.lobby;
 
 import org.esoteric_organisation.tss_core_plugin.TSSCorePlugin;
 import org.esoteric_organisation.tss_core_plugin.datatype.SimpleLocation;
 import org.esoteric_organisation.tss_core_plugin.manager.FileManager;
-import org.esoteric_organisation.tss_lobby_plugin.cosmetic.CosmeticsManager;
-import org.esoteric_organisation.tss_lobby_plugin.event.JoinListener;
-import org.esoteric_organisation.tss_lobby_plugin.event.LobbyListener;
-import org.esoteric_organisation.tss_lobby_plugin.event.NPCClickListener;
+import org.esoteric.tss.minecraft.plugins.lobby.cosmetics.CosmeticsManager;
+import org.esoteric.tss.minecraft.plugins.lobby.event.listeners.JoinListener;
+import org.esoteric.tss.minecraft.plugins.lobby.event.listeners.LobbyListener;
+import org.esoteric.tss.minecraft.plugins.lobby.event.listeners.NPCClickListener;
 import org.esoteric_organisation.tss_ranks_plugin.TSSRanksPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -17,8 +17,8 @@ public final class TSSLobbyPlugin extends JavaPlugin {
 
   private final PluginManager pluginManager = Bukkit.getPluginManager();
 
-  private final TSSCorePlugin core = (TSSCorePlugin) pluginManager.getPlugin("tss-core-plugin");
-  private final TSSRanksPlugin ranksPlugin = (TSSRanksPlugin) pluginManager.getPlugin("tss-ranks-plugin");
+  private final TSSCorePlugin core = (TSSCorePlugin) pluginManager.getPlugin("TSSCore");
+  private final TSSRanksPlugin ranksPlugin = (TSSRanksPlugin) pluginManager.getPlugin("TSSRanks");
 
   private FileManager fileManager;
 
