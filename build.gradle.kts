@@ -48,4 +48,5 @@ bukkitPluginYaml {
     apiVersion = "1.21"
     main = "org.esoteric.tss.minecraft.plugins.lobby.TSSLobbyPlugin"
     load = BukkitPluginYaml.PluginLoadOrder.STARTUP
+    depend.addAll("TSSCore", "TSSRanks")
 }
