@@ -1,0 +1,3 @@
+[submodule "lobby-world"]
+	path = lobby-world
+	url = git@github.com:EsotericOrganisation/tss-lobby-world.git
