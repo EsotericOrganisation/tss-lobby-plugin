@@ -1,12 +1,12 @@
 package org.esoteric.tss.minecraft.plugins.lobby.event.listeners;
 
 import net.kyori.adventure.title.TitlePart;
-import org.esoteric_organisation.tss_core_plugin.datatype.FireworkType;
-import org.esoteric_organisation.tss_core_plugin.datatype.Rank;
-import org.esoteric_organisation.tss_core_plugin.datatype.player.Message;
-import org.esoteric_organisation.tss_core_plugin.datatype.player.PlayerProfile;
-import org.esoteric_organisation.tss_core_plugin.datatype.player.TranslatableItemStack;
-import org.esoteric_organisation.tss_core_plugin.manager.MessageManager;
+import org.esoteric.tss.minecraft.plugins.core.data.FireworkType;
+import org.esoteric.tss.minecraft.plugins.core.data.Rank;
+import org.esoteric.tss.minecraft.plugins.core.data.player.Message;
+import org.esoteric.tss.minecraft.plugins.core.data.player.PlayerProfile;
+import org.esoteric.tss.minecraft.plugins.core.data.player.TranslatableItemStack;
+import org.esoteric.tss.minecraft.plugins.core.managers.MessageManager;
 import org.esoteric.tss.minecraft.plugins.lobby.TSSLobbyPlugin;
 import org.bukkit.FireworkEffect;
 import org.bukkit.Material;
